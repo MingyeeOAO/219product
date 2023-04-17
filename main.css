@@ -120,12 +120,17 @@ ul li{
     display:none;
 }
 .img-box{
+    /*opacity: 0;
+    transition: opacity 250ms ease-in;*/
     height:40vh;width:100vw;
     display:flex;
     align-items:center ;
     justify-content:center ;
     background:#fff;color:#000;
 }
+/*.img-box.appear{
+    opacity: 1;
+}*/
 #info img{
     height:40vh;width:auto ;
     background-size:cover;

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" /><link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-        <script crossorigin="anonymous" src="main.js"></script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script><link href="main.css" rel="stylesheet"><script src="main.js"></script>   
-        <title>Online Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /><link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/3c5be74ba6.js"></script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script><link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"><script src="https://unpkg.com/aos@next/dist/aos.js"></script>   
+    <link href="main.css" rel="stylesheet" /><script src="main.js"></script>
+    <title>Online Shop</title>
     </head>
     <body>
 <!--Bar-->
@@ -33,99 +34,94 @@
         Start</button></a></li>
         </ul></div>
         <!--Products-->
-        <div id="product"></div>  
+        <div id="product">
+                  
+        </div>  
         <div id="info"></div>  
         <!--About-->
         <div id="about"><ul><li>
         <h1>Our News Letter<b>.</b></h1></li>
         <li><h4>Promotion new products and sales. Directly to your.</h4></li> 
-        <li><form><input type="email" name="Email" placeholder="Write Your Email" required><button type="reset">Send</button></form></li>
-        <li style="display:flex;
-        justify-content:space-between;"><img src="https://i.imgur.com/bsOt1YR.png">
-        <img src="https://i.imgur.com/xViirw3.png">
-        <img src="https://i.imgur.com/La9Dayf.png">
-        <img src="https://i.imgur.com/OlrBYev.png">    
-        </li>
         </ul></div>
         <!--Creator-->
         <div id="creator"></div>
 
         <script>
-        var products = [
-        {
-            name: "Fries and Dipping Sauce",
-            price: "1",
-            about:"write write write write write write write write write write write write write write write write",
-            src: "gFGC31O" 
-        },{
-            name: "Burger",
-            price: "2",
-            about:"write write write write write write write write write write write write write write write write",
-            src: "kQNE9M2"
-        },{    
-            name: "Fried Chickken",
-            price: "10",
-            about:"write write write write write write write write write write write write write write write write",
-            src: "T5z7HdV" 
-        },{
-            name: "HotDog",
-            price: "10",
-            about:"write write write write write write write write write write write write write write write write",
-            src: "NnZDRNZ" 
-        },{
-            name: "Sandwich And Slice Of Lemons",
-            price: "7",
-            about:"write write write write write write write write write write write write write write write write",
-            src: "hlq9urj" 
-        },{
-            name: "Pizza",
-            price: "15",
-            about:"write write write write write write write write write write write write write write write write",
-            src: "M060FSa"  
-        },{
-            name: "Egg with Vegetables",
-            price: "10",
-            about:"write write write write write write write write write write write write write write write write",
-            src: "6LpM84X"
-        },{
-            name: "Spaghetti",
-            price: "6",
-            about:"write write write write write write write write write write write write write write write write",
-            src: "5ghPGpp"
-        }
-        ]  
-        for(var p=0;p<products.length;p++){
+            var products = [
+    {
+        name: "Fries and Dipping Sauce",
+        price: "1",
+        about:"write write write write write write write write write write write write write write write write",
+        src: "gFGC31O" 
+    },{
+        name: "Burger",
+        price: "2",
+        about:"write write write write write write write write write write write write write write write write",
+        src: "kQNE9M2"
+    },{    
+        name: "Fried Chickken",
+        price: "10",
+        about:"write write write write write write write write write write write write write write write write",
+        src: "T5z7HdV" 
+    },{
+        name: "HotDog",
+        price: "10",
+        about:"write write write write write write write write write write write write write write write write",
+        src: "NnZDRNZ" 
+    },{
+        name: "Sandwich And Slice Of Lemons",
+        price: "7",
+        about:"write write write write write write write write write write write write write write write write",
+        src: "hlq9urj" 
+    },{
+        name: "Pizza",
+        price: "15",
+        about:"write write write write write write write write write write write write write write write write",
+        src: "M060FSa"  
+    },{
+        name: "Egg with Vegetables",
+        price: "10",
+        about:"write write write write write write write write write write write write write write write write",
+        src: "6LpM84X"
+    },{
+        name: "Spaghetti",
+        price: "6",
+        about:"write write write write write write write write write write write write write write write write",
+        src: "5ghPGpp"
+    }
+    ]  
+    for(var p=0;p<products.length;p++){
         var product =
         document.getElementById("product");
-        product.innerHTML+=`<div class="product" 
+        product.innerHTML+=`<div class="product"
         style="background:url('https://i.imgur.com/${products[p].src}.jpg');
         background-size:cover;"
         onclick="info(${p})"     data-aos="zoom-in-up">
         <div id="info-p"><h2>${products[p].name}</h2>
         <button id="buy">Buy $${products[p].price}</button></div>
         </div>`  
-        } 
-        function info(num){
+    } 
+    function info(num){
         var info =
         document.getElementById("info");
         setTimeout(() => {
         info.style.display="block";  
         },1000);
-        info.innerHTML=`<div class="img-box">
+        info.innerHTML=`<div class="img-box" >
         <h1 class="fas fa-arrow-circle-left" onclick="back_home()"></h1><img src="https://i.imgur.com/${products[num].src}.jpg">    
         </div>
         <div class="info"><ul>
         <li><h2>Info this Product</h2></li>
         <li>${products[num].about}</li>
-        </ul></div>`     
-        } 
-        Swal.fire({
-        icon: 'success',
-        title: 'Welcome !',
-        text: 'Welcome to my Web! If you like this web please upvote and write comment.',
-        footer: 'Aziz Sobirov'
-        }); 
-        AOS.init({duration: 1500,}) 
+        </ul></div>`        
+    } 
+    Swal.fire({
+    icon: 'success',
+    title: 'Welcome !',
+    text: 'Welcome to my Web! If you like this web please upvote and write comment.',
+    footer: 'Aziz Sobirov'
+    }); 
+    AOS.init({duration: 1500,}) 
         </script>    
     </body>
 </html>
