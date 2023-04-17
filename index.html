@@ -1,27 +1,131 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <a>123456</a>
-    <input type="button" value="測試", id = "get">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" /><link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <script crossorigin="anonymous" src="main.js"></script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script><link href="main.css" rel="stylesheet"><script src="main.js"></script>   
+        <title>Online Shop</title>
+    </head>
+    <body>
+<!--Bar-->
+        <div id="header-bar">
+            <h1>Online Shop<b>.</b></h1>    
+            <h1 onclick="on()" class="fas fa-bars"></h1></div>
+        <!--Slider-->
+        <div id="slider">
+        <div id="close" onclick="off()"></div>
+        <div id="nav-bar"><ul>
+        <li><h3>Online Shop<b>.</b></h3></li>
+        <li><a href="#logo" onclick="off()">Home</a></li>
+        <li><a href="#product" onclick="off()">Fast Foods</a></li>
+        <li><a href="#new" onclick="off()">New</a></li>
+        <li><a href="#about" onclick="off()">Subscribed</a></li>
+        <li><a href="#creator" onclick="off()">Creator</a></li>
+        <!--Switch--><li style="display:flex;align-items:center;justify-content:space-between;">
+        <h5>Night</h5>  
+        <div id="switch" onclick="swch()">
+        <div id="swch" onclick="off()"></div></div><h5>Light</h5></li>
+        </ul></div></div>
+        <!--Logo--> 
+        <div id="logo"><ul data-aos="zoom-in-up">
+        <li><h1>New Arrivals.</h1></li>
+        <li><h2>Start Shopping.</h2></li>
+        <li><a href="#product"><button>
+        Start</button></a></li>
+        </ul></div>
+        <!--Products-->
+        <div id="product"></div>  
+        <div id="info"></div>  
+        <!--About-->
+        <div id="about"><ul><li>
+        <h1>Our News Letter<b>.</b></h1></li>
+        <li><h4>Promotion new products and sales. Directly to your.</h4></li> 
+        <li><form><input type="email" name="Email" placeholder="Write Your Email" required><button type="reset">Send</button></form></li>
+        <li style="display:flex;
+        justify-content:space-between;"><img src="https://i.imgur.com/bsOt1YR.png">
+        <img src="https://i.imgur.com/xViirw3.png">
+        <img src="https://i.imgur.com/La9Dayf.png">
+        <img src="https://i.imgur.com/OlrBYev.png">    
+        </li>
+        </ul></div>
+        <!--Creator-->
+        <div id="creator"></div>
 
-    <script>
-        
-        var num =1;
-        function get(){
-            alert(num);
-            num ++;
+        <script>
+        var products = [
+        {
+            name: "Fries and Dipping Sauce",
+            price: "1",
+            about:"write write write write write write write write write write write write write write write write",
+            src: "gFGC31O" 
+        },{
+            name: "Burger",
+            price: "2",
+            about:"write write write write write write write write write write write write write write write write",
+            src: "kQNE9M2"
+        },{    
+            name: "Fried Chickken",
+            price: "10",
+            about:"write write write write write write write write write write write write write write write write",
+            src: "T5z7HdV" 
+        },{
+            name: "HotDog",
+            price: "10",
+            about:"write write write write write write write write write write write write write write write write",
+            src: "NnZDRNZ" 
+        },{
+            name: "Sandwich And Slice Of Lemons",
+            price: "7",
+            about:"write write write write write write write write write write write write write write write write",
+            src: "hlq9urj" 
+        },{
+            name: "Pizza",
+            price: "15",
+            about:"write write write write write write write write write write write write write write write write",
+            src: "M060FSa"  
+        },{
+            name: "Egg with Vegetables",
+            price: "10",
+            about:"write write write write write write write write write write write write write write write write",
+            src: "6LpM84X"
+        },{
+            name: "Spaghetti",
+            price: "6",
+            about:"write write write write write write write write write write write write write write write write",
+            src: "5ghPGpp"
         }
-        let btn = document.getElementById("get");
-        btn.addEventListener('click', event => {
-            get();
-        });
-    </script>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-</head>
-<body>
-    
-</body>
+        ]  
+        for(var p=0;p<products.length;p++){
+        var product =
+        document.getElementById("product");
+        product.innerHTML+=`<div class="product" 
+        style="background:url('https://i.imgur.com/${products[p].src}.jpg');
+        background-size:cover;"
+        onclick="info(${p})"     data-aos="zoom-in-up">
+        <div id="info-p"><h2>${products[p].name}</h2>
+        <button id="buy">Buy $${products[p].price}</button></div>
+        </div>`  
+        } 
+        function info(num){
+        var info =
+        document.getElementById("info");
+        setTimeout(() => {
+        info.style.display="block";  
+        },1000);
+        info.innerHTML=`<div class="img-box">
+        <h1 class="fas fa-arrow-circle-left" onclick="back_home()"></h1><img src="https://i.imgur.com/${products[num].src}.jpg">    
+        </div>
+        <div class="info"><ul>
+        <li><h2>Info this Product</h2></li>
+        <li>${products[num].about}</li>
+        </ul></div>`     
+        } 
+        Swal.fire({
+        icon: 'success',
+        title: 'Welcome !',
+        text: 'Welcome to my Web! If you like this web please upvote and write comment.',
+        footer: 'Aziz Sobirov'
+        }); 
+        AOS.init({duration: 1500,}) 
+        </script>    
+    </body>
 </html>
