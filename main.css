@@ -17,9 +17,12 @@ background:rgba(255,255,255,.9);}
     align-items:center ;
     justify-content:space-between;
     background:transparent ;
-    color:#fff;
+    color:#ffffff;
     z-index:3;
     transition-duration:1s;
+}
+.header{
+    color: #8f8f8f;
 }
 ul li{
     padding:2vh;
@@ -47,11 +50,11 @@ ul li{
     height:100vh;width:100vw;
     display:flex;
     align-items:center ;
-    justify-content:flex-start ;   background:url("https://i.imgur.com/tkg69Zc.jpg"); 
+    justify-content:flex-start ;   background:url("pictures/background.jpg"); 
     background-size:cover;
 }
 #logo li{
-    color:#fff;text-align:left;
+    color:#969696;text-align:left;
     margin:3vh;padding:0;
 }
 #logo button{
@@ -180,7 +183,7 @@ body.swch #about{
 body.swch #info{
     background:#fff;color:#000;}
 body.swch #logo{
-background:url("https://i.imgur.com/x1l1Cfk.jpg"); 
+background:url("pictures/background.jpg"); 
 background-size:cover;}
 body.swch #logo button{background:#ff0055;}
 body.swch #logo li{color:#000;}
