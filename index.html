@@ -5,6 +5,20 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <a>123456</a>
+    <input type="button" value="測試", id = "get">
+
+    <script>
+        
+        var num =1;
+        function get(){
+            alert(num);
+            num ++;
+        }
+        let btn = document.getElementById("get");
+        btn.addEventListener('click', event => {
+            get();
+        });
+    </script>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
