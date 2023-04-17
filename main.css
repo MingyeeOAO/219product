@@ -8,6 +8,7 @@ b{color:#ff0055;}
 a{text-decoration:none;color:#fff;}
 #header-bar.active{color:#000;
 background:rgba(255,255,255,.9);}
+
 #header-bar{
     position:fixed;top:0;
     padding:2vh;
@@ -17,13 +18,13 @@ background:rgba(255,255,255,.9);}
     align-items:center ;
     justify-content:space-between;
     background:transparent ;
-    color:#ffffff;
+    color: #8f8f8f;
     z-index:3;
     transition-duration:1s;
 }
-.header{
+/*.header{
     color: #8f8f8f;
-}
+}*/
 ul li{
     padding:2vh;
     text-align:center ;
@@ -50,7 +51,7 @@ ul li{
     height:100vh;width:100vw;
     display:flex;
     align-items:center ;
-    justify-content:flex-start ;   background:url("pictures/background.jpg"); 
+    justify-content:flex-start ;   background:url("pictures/background.jpg") fixed center center no-repeat; 
     background-size:cover;
 }
 #logo li{
@@ -118,7 +119,7 @@ ul li{
     position:fixed ;
     top:0;left:0;
     height:100vh;width:100vw;
-    color:#fff;background:#222;
+    color:#ffffff;background:#222;
     z-index:5;
     display:none;
 }
@@ -175,7 +176,7 @@ body.swch #switch{justify-content:flex-end;}
 body.swch #slider{filter:invert(1);}
 body.swch #product{background:#fff;}
 body.swch #product .product{
-    box-shadow:0 0 4px 4px rgba(0,0,0,.35);
+    box-shadow:0 0 4px 4px rgba(255, 255, 255, 0.35);
     transition-duration:0.5s;}body.swch #product .product:hover{
     box-shadow:0 0 1px 1px rgba(0,0,0,.35);}
 body.swch #about{
@@ -183,9 +184,9 @@ body.swch #about{
 body.swch #info{
     background:#fff;color:#000;}
 body.swch #logo{
-background:url("pictures/background.jpg"); 
+background:url("pictures/background.jpg") center center fixed no-repeat; 
 background-size:cover;}
-body.swch #logo button{background:#ff0055;}
-body.swch #logo li{color:#000;}
+body.swch #logo button{background:#ffffff;}
+body.swch #logo li{color: #969696;;}
 body.swch #about img{filter:invert(0)}
 body.swch #header-bar{color:#000;}
