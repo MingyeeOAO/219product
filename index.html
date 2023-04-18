@@ -20,7 +20,14 @@
         <li><a href="#product" onclick="off()">Fast Foods</a></li>
         <li><a href="#new" onclick="off()">New</a></li>
         <li><a href="#about" onclick="off()">Subscribed</a></li>
-        <li><a href="#creator" onclick="off()">Creator</a></li>
+        <li class ='creator'>
+            <a  onclick="open()">Creator</a>
+            <div class="popup" data-aos="flip-left">
+
+                <a>測試</a>
+
+            </div>
+        </li>
         <!--Switch--><li style="display:flex;align-items:center;justify-content:space-between;">
         <h5>Night</h5>  
         <div id="switch" onclick="swch()">
@@ -44,8 +51,7 @@
         <li><h4>Fresh, Clean, Enjoyable.</h4></li> 
         </ul></div>
         <!--Creator-->
-        <div id="creator"></div>
-
+        
         <script>
             var products = [
     {
