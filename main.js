@@ -1,5 +1,4 @@
 
-
 window.addEventListener("scroll",function(){var nav = 
     document.getElementById("header-bar");
     nav.classList.toggle("active",window.scrollY > 0);

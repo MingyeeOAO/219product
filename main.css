@@ -55,7 +55,7 @@ ul li{
     background-size:cover;
 }
 #logo li{
-    color:#969696;text-align:left;
+    color:#4d4d4d;text-align:left;
     margin:3vh;padding:0;
 }
 #logo button{
@@ -185,7 +185,7 @@ body.swch #info{
     background:#fff;color:#000;}
 body.swch #logo{
 background:url("pictures/background.jpg") center center fixed no-repeat; 
-background-size:cover;}
+background-size:auto;}
 body.swch #logo button{background:#ffffff;}
 body.swch #logo li{color: #969696;;}
 body.swch #about img{filter:invert(0)}
