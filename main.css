@@ -46,7 +46,7 @@ ul li{
     height:100vh;width:70vw;
     background:#222;
 }
-li.creator .popup{
+/*li.creator .popup{
     position: absolute;
     width: 50vw;
     height: 50vh;
@@ -54,14 +54,14 @@ li.creator .popup{
     top:25%;
     left: 25%;
     background: #fff;
-    /*transform: translate(-50%, -50%) scale(0.1);*/
+    transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
     visibility:hidden;
     padding: 0 30px 30px ;
 }
 .open-popup{
     visibility: visible;
-}
+}*/
 #close{height:100vh;width:30vw;}
 #logo{
     height:100vh;width:100vw;
@@ -186,7 +186,32 @@ li.creator .popup{
     font-weight:700;
     text-transform:uppercase ;
 }
+#pop{
+    top: 50%;
+    left: 50%;
+    position: absolute; 
+    border:3px solid transparent ;
+    border-radius:10px;
+    padding:1cm;
+    color:violet;
+    background-color:lightgrey;
+    width:5cm;
+    height:4cm;
+    transition:all 0.5s;
+    transform:scale(0);
+}
 
+#cross{
+    border:3px solid transparent ;
+    border-radius:10px;
+    color:red;
+    background-color:white;
+}
+
+#cross:hover{
+    color:white;
+    background-color:red;
+}
 
 
 /*Night Mode*/

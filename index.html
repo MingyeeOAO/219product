@@ -17,16 +17,11 @@
         <div id="nav-bar"><ul>
         <li><h3>Online Shop<b>.</b></h3></li>
         <li><a href="#logo" onclick="off()">Home</a></li>
-        <li><a href="#product" onclick="off()">Fast Foods</a></li>
-        <li><a href="#new" onclick="off()">New</a></li>
-        <li><a href="#about" onclick="off()">Subscribed</a></li>
+        <li><a href="#product" onclick="off()">About Products</a></li>
+        <li><a href="#new" onclick="off()"></a></li>
+        <li><a href="#about" onclick="off()">Set Menu</a></li>
         <li class ='creator'>
-            <a  onclick="open()">Creator</a>
-            <div class="popup" data-aos="flip-left">
-
-                <a>測試</a>
-
-            </div>
+            <a  onclick="creator()">Creator</a>
         </li>
         <!--Switch--><li style="display:flex;align-items:center;justify-content:space-between;">
         <h5>Night</h5>  
@@ -50,84 +45,106 @@
         <h1>CHSH 119 Products<b>.</b></h1></li>
         <li><h4>Fresh, Clean, Enjoyable.</h4></li> 
         </ul></div>
-        <!--Creator-->
-        
+        <!--buy-->
+        <form type="button">Buy Now</form>
         <script>
             var products = [
-    {
-        name: "奶酪",
-        price: "1",
-        about:"沒介紹",
-        src: "ptcta" 
-    },{
-        name: "布蕾",
-        price: "2",
-        about:"相信我這是個布雷",
-        src: "bu"
-    },{    
-        name: "冰棒",
-        price: "10",
-        about:"汽水冰棒",
-        src: "popsicle" 
-    },{
-        name: "三明治",
-        price: "10",
-        about:"??",
-        src: "sandwich" 
-    }/*,{
-        name: "Sandwich And Slice Of Lemons",
-        price: "7",
-        about:"write write write write write write write write write write write write write write write write",
-        src: "hlq9urj" 
-    },{
-        name: "Pizza",
-        price: "15",
-        about:"write write write write write write write write write write write write write write write write",
-        src: "M060FSa"  
-    },{
-        name: "Egg with Vegetables",
-        price: "10",
-        about:"write write write write write write write write write write write write write write write write",
-        src: "6LpM84X"
-    },{
-        name: "Spaghetti",
-        price: "6",
-        about:"write write write write write write write write write write write write write write write write",
-        src: "5ghPGpp"
-    }*/
-    ]  
-    for(var p=0;p<products.length;p++){
-        var product =
-        document.getElementById("product");
-        product.innerHTML+=`<div class="product"
-        style="background:url('pictures/${products[p].src}.jpg');
-        background-size:cover;"
-        onclick="info(${p})"     data-aos="zoom-in-up">
-        <div id="info-p"><h2>${products[p].name}</h2>
-        <button id="buy">Buy $${products[p].price}</button></div>
-        </div>`  
-    } 
-    function info(num){
-        var info =
-        document.getElementById("info");
-        setTimeout(() => {
-        info.style.display="block";  
-        },1000);
-        info.innerHTML=`<div class="img-box" >
-        <h1 class="fas fa-arrow-circle-left" onclick="back_home()"></h1><img src="pictures/${products[num].src}.jpg">    
-        </div>
-        <div class="info"><ul>
-        <li><h2>Info this Product</h2></li>
-        <li>${products[num].about}</li>
-        </ul></div>`        
-    } 
-    Swal.fire({
-    icon: 'success',
-    title: 'Welcome !',
-    text: '歡迎來到119的神奇網站，有啥建議請閉嘴',
-    footer: 'Mingyee'
-    }); 
-    AOS.init({duration: 1500,}) 
-        </script>    
+            {
+                name: "奶酪",
+                price: "1",
+                about:"沒介紹",
+                src: "ptcta" 
+            },{
+                name: "布蕾",
+                price: "2",
+                about:"相信我這是個布雷",
+                src: "bu"
+            },{    
+                name: "冰棒",
+                price: "10",
+                about:"汽水冰棒",
+                src: "popsicle" 
+            },{
+                name: "三明治",
+                price: "10",
+                about:"??",
+                src: "sandwich" 
+            }/*,{
+                name: "Sandwich And Slice Of Lemons",
+                price: "7",
+                about:"write write write write write write write write write write write write write write write write",
+                src: "hlq9urj"
+            },{
+                name: "Pizza",
+                price: "15",
+                about:"write write write write write write write write write write write write write write write write",
+                src: "M060FSa"  
+            },{
+                name: "Egg with Vegetables",
+                price: "10",
+                about:"write write write write write write write write write write write write write write write write",
+                src: "6LpM84X"
+            },{
+                name: "Spaghetti",
+                price: "6",
+                about:"write write write write write write write write write write write write write write write write",
+                src: "5ghPGpp"
+            }*/
+            ]  
+            for(var p=0;p<products.length;p++){
+                var product =
+                document.getElementById("product");
+                product.innerHTML+=`<div class="product"
+                style="background:url('pictures/${products[p].src}.jpg');
+                background-size:cover;"
+                onclick="info(${p})"     data-aos="zoom-in-up">
+                <div id="info-p"><h2>${products[p].name}</h2>
+                    <button id="buy"onclick=popup()>
+                        Buy $${products[p].price}
+                    </button>
+                </div>`
+                    /*<div id="pop">
+                        hello!<br>this is my popup!<br>and don't forget to like :)
+                        <br><br><button id="cross"onclick=popin()>
+                            &times;
+                        </button>
+                    </div>*/  
+            } 
+            function info(num){
+                var info =
+                document.getElementById("info");
+                /*setTimeout(() => {
+                info.style.display="block";  
+                },1000);*/
+                /*Swal.fire({
+                    imageUrl: `url(/pictures/${products[p].src}.jpg)`,
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                })*/
+                info.innerHTML=`<div class="img-box" >
+                <h1 class="fas fa-arrow-circle-left" onclick="back_home()"></h1><img src="pictures/${products[num].src}.jpg">    
+                </div>
+                <div class="info"><ul>
+                <li><h2>Info this Product</h2></li>
+                <li>${products[num].about}</li>
+                </ul></div>`
+            } 
+            Swal.fire({
+            icon: 'success',
+            title: 'Welcome !',
+            text: '歡迎來到119的神奇網站，有啥建議請閉嘴',
+            footer: 'Mingyee'
+            }); 
+            AOS.init({duration: 1500,}) 
+            function creator(){
+                Swal.fire({
+                    title:"Creator",
+                    text:"Discord : Mingyee#4483",
+                    footer:"Made by 119 04 :)"
+                })
+            }
+            
+        </script> 
     </body>
 </html>
