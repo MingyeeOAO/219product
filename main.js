@@ -37,7 +37,8 @@ function popin(){
     mes.style.transform="scale(0)";
     mes.style.transitionTimingFunction="cubic-bezier(0,0,0,-1.47)";
 }
-var options = {
+
+/*var options = {
     host: 'private-github-api.com', // <-- Private github api url. If not passed, defaults to 'api.github.com'
     pathPrefix: 'prefix-for-enterprise-instance', // <-- Private github api url prefix. If not passed, defaults to null.
     protocol: 'https', // <-- http protocol 'https' or 'http'. If not passed, defaults to 'https'
@@ -50,13 +51,13 @@ var GithubDB = require('..').default;
 var githubDB = new GithubDB(options);
 
 githubDB.auth(personalAccessToken);
-function a(){
+
     githubDB.save({"num":1}).then((res) => {
         // The result from the same
         console.log(res);
     });
-}
-githubDB.connectToRepo();
+
+githubDB.connectToRepo();*/
 /*const appearOption = {}
 const faders = document.querySelectorAll('.img-box')
 const AppearOnScroll = new IntersectionObserver(function (entries, AppearOnScroll){

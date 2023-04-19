@@ -2,13 +2,34 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta http-equiv='X-UA-Compatible' content='width=device-width, initial-scale=1'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <button onclick="a()">a</button>
-    <script src='main.js'></script>
+    <script src="main.js"></script>
 </head>
 <body>
-    
+    <div id="id01"></div>
+
+    <script>
+    var url = "https://json.extendsclass.com/bin/9d4cdeea402e";
+    var data = {
+        "num":"0"
+    };
+    var xhr = new XMLHttpRequest();
+    xhr.onload = () =>{
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            data = JSON.parse(xhr.responseText).data;
+            alert(JSON.stringify(data))
+        }
+    }
+    alert(data.num)
+    xhr.open('GET', url);
+    xhr.send(null);
+    data.num = String(parseInt(data.num) +1);
+    xhr.open("PUT", url);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.send(JSON.stringify(data));
+
+    </script>
 </body>
 </html>
