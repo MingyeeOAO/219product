@@ -46,6 +46,17 @@ var options = {
     remoteFilename: 'data.json' // <- File with extension .json
   };
 var personalAccessToken = "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";
+var GithubDB = require('..').default;
+var githubDB = new GithubDB(options);
+
+githubDB.auth(personalAccessToken);
+function a(){
+    githubDB.save({"num":1}).then((res) => {
+        // The result from the same
+        console.log(res);
+    });
+}
+githubDB.connectToRepo();
 /*const appearOption = {}
 const faders = document.querySelectorAll('.img-box')
 const AppearOnScroll = new IntersectionObserver(function (entries, AppearOnScroll){
