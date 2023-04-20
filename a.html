@@ -27,15 +27,7 @@
     }
     function editdata(str){
         data = JSON.parse(str);
-        data = {
-            "num":data.num+1
-        }
         alert(data.num);
-        req.open("PUT", url, true);
-        req.onreadystatechange = () =>{
-        }
-        req.setRequestHeader("Security-key", "");
-        req.send(JSON.stringify(data));
     }
     xhr.send(null);
 
