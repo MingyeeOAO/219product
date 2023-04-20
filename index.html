@@ -23,8 +23,8 @@
         <li><h3>Online Shop<b>.</b></h3></li>
         <li><a href="#logo" onclick="off()">Home</a></li>
         <li><a href="#product" onclick="off()">About Products</a></li>
-        <li><a href="#new" onclick="off()"></a>???</li>
-        <li><a href="#about" onclick="off()">Set Menu</a></li>
+        <li><a href="#new" onclick="off()"></a>Set Menu</li>
+        <li><a href="#about" onclick="off()">about</a></li>
         <li class ='creator'>
             <a  onclick="creator()">Creator</a>
         </li>
@@ -50,6 +50,7 @@
         <h1>CHSH 119 Products<b>.</b></h1></li>
         <li><h4>Fresh, Clean, Enjoyable.</h4></li> 
         </ul></div>
+        <!--Set Menu-->
         <!--buylink-->
         <div id="buylink">
             <button id="buy" onclick="getnum()">Buy Now</button>
@@ -59,28 +60,29 @@
             {
                 name: "奶酪",
                 price: "1",
-                about:"沒介紹",
+                about:"打開杯蓋，撲鼻而來的只有鮮奶的濃純香!我們用料實在，全程不加一滴水，還細選三種美味的加料，錯過可惜！",
                 src: "ptcta" 
             },{
                 name: "布蕾",
                 price: "2",
-                about:"相信我這是個布雷",
+                about:"~這扎實的用料，細緻的口感，還有表層炙燒得令人垂涎欲滴的焦糖，你，還在等什麼?別再蕾了啦哥!",
                 src: "bu"
             },{    
                 name: "冰棒",
                 price: "10",
-                about:"汽水冰棒",
+                about:"炎炎夏日就該來支老少咸宜的冰棒!我們精挑四種經典滋味準備給您品嚐，吃下去保證暑氣全消，透心涼~",
                 src: "popsicle" 
             },{
                 name: "三明治",
                 price: "10",
-                about:"??",
+                about:"此三明治非彼三明治也，利用優質烤肉、美生菜、吐司的完美結合，還有神秘配料共舞，絕對是您解饞止飢的好選擇!",
                 src: "sandwich" 
             }/*,{
                 name: "Sandwich And Slice Of Lemons",
                 price: "7",
                 about:"write write write write write write write write write write write write write write write write",
-                src: "hlq9urj"
+                src: "利用夏天冰涼的汽水結合氣勢炸裂的乾冰，營造出吞雲吐霧的神秘感，不僅消暑解渴，其風味更值得您來試試!
+"
             },{
                 name: "Pizza",
                 price: "15",
@@ -107,7 +109,7 @@
                 onclick="info(${p})"     data-aos="zoom-in-up">
                 <div id="info-p"><h2>${products[p].name}</h2>
                     <button id="buy"onclick=popup()>
-                        Buy $${products[p].price}
+                        介紹 $${products[p].price}
                     </button>
                 </div>`
                     /*<div id="pop">
@@ -120,9 +122,9 @@
             function info(p){
                 var info =
                 document.getElementById("info");
-                /*setTimeout(() => {
+                setTimeout(() => {
                 info.style.display="block";  
-                },1000);*/
+                },1000);
                 /*var pic =  "https://mingyeeoao.github.io/119product/pictures/"+products[p].src+".jpg)"
                 Swal.fire({
                     imageUrl: pic,
@@ -135,14 +137,14 @@
                 <h1 class="fas fa-arrow-circle-left" onclick="back_home()"></h1><img src="pictures/${products[num].src}.jpg">    
                 </div>
                 <div class="info"><ul>
-                <li><h2>Info this Product</h2></li>
+                <li><h2>產品介紹:</h2></li>
                 <li>${products[num].about}</li>
                 </ul></div>`
             } 
             Swal.fire({
             icon: 'success',
             title: 'Welcome !',
-            text: '歡迎來到119的神奇網站，有啥建議請閉嘴',
+            text: '歡迎來到119的神奇網站，開始購物吧~',
             footer: 'Mingyee'
             }); 
             AOS.init({duration: 1500,}) 
@@ -173,11 +175,17 @@
                     }
 
                 }
+                function getRandom(min,max){
+                    return Math.floor(Math.random()*(max-min+1))+min;
+                };
                 function editdata(str){
                     data = JSON.parse(str);
-                    data = {
-                        "num":data.num+1
+                    
+                    var a = getRandom(10000, 99999);
+                    while(data.num.includes(a)){
+                        a = getRandom(10000, 99999);
                     }
+                    data.num.push(a)
                     req.open("PUT", url, true);
                     req.onreadystatechange = () =>{
                     }
@@ -185,7 +193,13 @@
                     req.send(JSON.stringify(data));
                     Swal.fire({
                         title:"你的單號:",
-                        text: data.num
+                        showClass: {
+                            popup: 'animate__animated animate__bounceInUp'
+                          },
+                          hideClass: {
+                            popup: 'animate__animated animate__bounceOutDown'
+                          },
+                        text: a
                     })
                 }
                 xhr.send(null);
