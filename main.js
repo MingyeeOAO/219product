@@ -17,8 +17,12 @@ window.addEventListener("scroll",function(){var nav =
     document.getElementById("header-bar");
     nav.classList.toggle("active",window.scrollY > 0);
     })
-
-
+function getThemeColor(){
+    return (mode ? "#000" : "#fff");
+}
+function getmode(){
+    return mode
+}
 var num =0;
 function get(){
     alert(num);

@@ -147,10 +147,11 @@
             for(var p=0; p<sets.length; p++){
                 var product =
                 document.getElementById("sets");
+                var arr = ["zoom-in-right", "zoom-in-left"]
                 product.innerHTML+=`<div class="sets"
                 style="background:url('pictures/${sets[p].src}.jpg');
                 background-size:cover;"
-                    data-aos="zoom-in-up">
+                onclick="sinfo(${p})"    data-aos=${arr[p%2]}>
                 <div id="info-p"><h2>${sets[p].name}</h2>
                     <button id="buy"onclick=popup()>
                         點我看介紹 
@@ -180,7 +181,7 @@
                 <li>$${products[num].price}</li>
                 </ul></div>`
             }
-            function info(p){
+            function sinfo(p){
                 var info =
                 document.getElementById("info");
                 setTimeout(() => {
@@ -254,14 +255,19 @@
                     req.setRequestHeader("Security-key", "");
                     req.send(JSON.stringify(data));
                     Swal.fire({
-                        title:"你的單號:",
+                        title:"你的單號:"+a,
+                        width:'40em',
+                        //background:getThemeColor(),
                         showClass: {
                             popup: 'animate__animated animate__bounceInUp'
                           },
                           hideClass: {
                             popup: 'animate__animated animate__bounceOutDown'
                           },
-                        text: a
+                        html: 'step1-> 請記住上方的單號(可截圖)<br>'+
+                              'step2-> <a style="color:blue" href="https://forms.gle/PZtE4ufPmKRWbpVb7">點我</a>前往點餐表單並填入單號<br>'+
+                              "step3->完成表單填寫並按下提交<br>"+
+                              "step4->前往點餐區進行下個流程(見攤位上的流程表)<br>"
                     })
                 }
                 xhr.send(null);
