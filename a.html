@@ -8,27 +8,38 @@
     <script src="main.js"></script>
 </head>
 <body>
+        <?php
+    header("Access-Control-Allow-Origin: *");
+    ?>
+
     <div id="id01"></div>
 
     <script>
     var url = "https://json.extendsclass.com/bin/9d4cdeea402e";
-    var data = {
-        "num":"0"
-    };
     var xhr = new XMLHttpRequest();
-    xhr.onload = () =>{
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-            data = JSON.parse(xhr.responseText).data;
-            alert(JSON.stringify(data))
+    var req = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = () =>{
+        if(xhr.readyState == XMLHttpRequest.DONE){
+            editdata(xhr.responseText)
         }
+
     }
-    alert(data.num)
-    xhr.open('GET', url);
+    function editdata(str){
+        data = JSON.parse(str);
+        data = {
+            "num":data.num+1
+        }
+        alert(data.num);
+        req.open("PUT", url, true);
+        req.onreadystatechange = () =>{
+        }
+        req.setRequestHeader("Security-key", "");
+        req.send(JSON.stringify(data));
+    }
     xhr.send(null);
-    data.num = String(parseInt(data.num) +1);
-    xhr.open("PUT", url);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr.send(JSON.stringify(data));
+
+    
 
     </script>
 </body>

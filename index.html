@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" /><link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <script crossorigin="anonymous" src="https://kit.fontawesome.com/3c5be74ba6.js"></script><script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script><link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"><script src="https://unpkg.com/aos@next/dist/aos.js"></script>   
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/3c5be74ba6.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="main.css" rel="stylesheet" /><script src="main.js"></script>
     <title>Online Shop</title>
     </head>
@@ -45,8 +50,10 @@
         <h1>CHSH 119 Products<b>.</b></h1></li>
         <li><h4>Fresh, Clean, Enjoyable.</h4></li> 
         </ul></div>
-        <!--buy-->
-        <form type="button">Buy Now</form>
+        <!--buylink-->
+        <div id="buylink">
+            <button id="buy" onclick="getnum()">Buy Now</button>
+        </div>
         <script>
             var products = [
             {
@@ -110,18 +117,20 @@
                         </button>
                     </div>*/  
             } 
-            function info(num){
+            function info(p){
                 var info =
                 document.getElementById("info");
                 /*setTimeout(() => {
                 info.style.display="block";  
                 },1000);*/
-                /*Swal.fire({
-                    imageUrl: `url(/pictures/${products[p].src}.jpg)`,
+                /*var pic =  "https://mingyeeoao.github.io/119product/pictures/"+products[p].src+".jpg)"
+                Swal.fire({
+                    imageUrl: pic,
                     imageWidth: 400,
                     imageHeight: 200,
                     imageAlt: 'Custom image',
                 })*/
+                
                 info.innerHTML=`<div class="img-box" >
                 <h1 class="fas fa-arrow-circle-left" onclick="back_home()"></h1><img src="pictures/${products[num].src}.jpg">    
                 </div>
@@ -139,12 +148,49 @@
             AOS.init({duration: 1500,}) 
             function creator(){
                 Swal.fire({
-                    title:"Creator",
-                    text:"Discord : Mingyee#4483",
+                    title:"Creator info",
+                    //text:"Discord : Mingyee#4483",
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInRight'
+                      },
+                      hideClass: {
+                        popup: 'animate__animated animate__fadeOutLeft'
+                      },
+                    html:
+                    'Discord : Mingyee#4483 <br>'+
+                    '<a href = "https://www.instagram.com/chsh_1_1_9._.best/", color=blue>119IG</a>',
                     footer:"Made by 119 04 :)"
                 })
             }
-            
+            function getnum(){
+                var url = "https://json.extendsclass.com/bin/9d4cdeea402e";
+                var xhr = new XMLHttpRequest();
+                var req = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.onreadystatechange = () =>{
+                    if(xhr.readyState == XMLHttpRequest.DONE){
+                        editdata(xhr.responseText)
+                    }
+
+                }
+                function editdata(str){
+                    data = JSON.parse(str);
+                    data = {
+                        "num":data.num+1
+                    }
+                    req.open("PUT", url, true);
+                    req.onreadystatechange = () =>{
+                    }
+                    req.setRequestHeader("Security-key", "");
+                    req.send(JSON.stringify(data));
+                    Swal.fire({
+                        title:"你的單號:",
+                        text: data.num
+                    })
+                }
+                xhr.send(null);
+
+            }
         </script> 
     </body>
 </html>

@@ -108,6 +108,7 @@ ul li{
 }
 #product h2{padding:5px;}
 #buy{
+    position: relative;
     height:40px;width:130px;
     color:#000;
     font-weight:700;
@@ -186,32 +187,20 @@ ul li{
     font-weight:700;
     text-transform:uppercase ;
 }
-#pop{
-    top: 50%;
-    left: 50%;
-    position: absolute; 
-    border:3px solid transparent ;
-    border-radius:10px;
-    padding:1cm;
-    color:violet;
-    background-color:lightgrey;
-    width:5cm;
-    height:4cm;
-    transition:all 0.5s;
-    transform:scale(0);
+#buylink{
+    background: #000;
 }
-
-#cross{
-    border:3px solid transparent ;
-    border-radius:10px;
-    color:red;
-    background-color:white;
-}
-
-#cross:hover{
-    color:white;
-    background-color:red;
-}
+#buylink #buy{
+    position: relative;
+    left:25%;
+    width: 50vw;
+    height: 5vh;
+    background: #5080be;
+    color:#fff;
+    border: #ffffff;
+    font-weight:700;
+    font-size:1.2em;
+} 
 
 
 /*Night Mode*/
@@ -224,6 +213,9 @@ body.swch #product .product{
     box-shadow:0 0 1px 1px rgba(0,0,0,.35);}
 body.swch #about{
     background:#fff;color:#000;}
+body.swch #buylink{
+    background: #fff;
+}
 body.swch #info{
     background:#fff;color:#000;}
 body.swch #logo{
