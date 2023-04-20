@@ -22,8 +22,8 @@
         <div id="nav-bar"><ul>
         <li><h3>Online Shop<b>.</b></h3></li>
         <li><a href="#logo" onclick="off()">Home</a></li>
-        <li><a href="#product" onclick="off()">About Products</a></li>
-        <li><a href="#new" onclick="off()"></a>Set Menu</li>
+        <li><a href="#product-title" onclick="off()">About Products</a></li>
+        <li><a href="#sets" onclick="off()"></a>Set Menu</li>
         <li><a href="#about" onclick="off()">about</a></li>
         <li class ='creator'>
             <a  onclick="creator()">Creator</a>
@@ -40,17 +40,23 @@
         <li><a href="#product"><button>
         Start</button></a></li>
         </ul></div>
+        <div id="product-title"><li><h1>~~~Products~~~</h1></li></div>
+        <!--info-->
+        <div id = "info"></div>
         <!--Products-->
         <div id="product">
                   
-        </div>  
-        <div id="info"></div>  
+        </div> 
+        <div id="set-title"><li><h1>~~~Meal Sets~~~</h1></li></div>
+        <!--Set Menu-->
+        <div id ="sets"></div>
         <!--About-->
         <div id="about"><ul><li>
         <h1>CHSH 119 Products<b>.</b></h1></li>
         <li><h4>Fresh, Clean, Enjoyable.</h4></li> 
         </ul></div>
-        <!--Set Menu-->
+        
+            
         <!--buylink-->
         <div id="buylink">
             <button id="buy" onclick="getnum()">Buy Now</button>
@@ -99,7 +105,26 @@
                 about:"write write write write write write write write write write write write write write write write",
                 src: "5ghPGpp"
             }*/
-            ]  
+            ]
+            var sets =[{
+                name:"A套餐",
+                price:"1234",
+                about:"aasdada",
+                src:"PJA"
+            },
+            {
+                name:"A套餐",
+                price:"1234",
+                about:"aasdada",
+                src:"PJA"
+            },
+            {
+                name:"A套餐",
+                price:"1234",
+                about:"aasdada",
+                src:"PJA"
+            }
+            ]
             for(var p=0;p<products.length;p++){
                 var product =
                 document.getElementById("product");
@@ -109,7 +134,7 @@
                 onclick="info(${p})"     data-aos="zoom-in-up">
                 <div id="info-p"><h2>${products[p].name}</h2>
                     <button id="buy"onclick=popup()>
-                        介紹 $${products[p].price}
+                        點我看介紹
                     </button>
                 </div>`
                     /*<div id="pop">
@@ -118,6 +143,19 @@
                             &times;
                         </button>
                     </div>*/  
+            } 
+            for(var p=0; p<sets.length; p++){
+                var product =
+                document.getElementById("sets");
+                product.innerHTML+=`<div class="sets"
+                style="background:url('pictures/${sets[p].src}.jpg');
+                background-size:cover;"
+                    data-aos="zoom-in-up">
+                <div id="info-p"><h2>${sets[p].name}</h2>
+                    <button id="buy"onclick=popup()>
+                        點我看介紹 
+                    </button>
+                </div>`
             } 
             function info(p){
                 var info =
@@ -139,6 +177,30 @@
                 <div class="info"><ul>
                 <li><h2>產品介紹:</h2></li>
                 <li>${products[num].about}</li>
+                <li>$${products[num].price}</li>
+                </ul></div>`
+            }
+            function info(p){
+                var info =
+                document.getElementById("info");
+                setTimeout(() => {
+                info.style.display="block";  
+                },1000);
+                /*var pic =  "https://mingyeeoao.github.io/119product/pictures/"+products[p].src+".jpg)"
+                Swal.fire({
+                    imageUrl: pic,
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                })*/
+                
+                info.innerHTML=`<div class="img-box" >
+                <h1 class="fas fa-arrow-circle-left" onclick="back_home()"></h1><img src="pictures/${sets[num].src}.jpg">    
+                </div>
+                <div class="info"><ul>
+                <li><h2>產品介紹:</h2></li>
+                <li>${sets[num].about}</li>
+                <li>$${sets[num].price}</li>
                 </ul></div>`
             } 
             Swal.fire({

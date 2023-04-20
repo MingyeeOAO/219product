@@ -22,9 +22,7 @@ background:rgba(255,255,255,.9);}
     z-index:3;
     transition-duration:1s;
 }
-/*.header{
-    color: #8f8f8f;
-}*/
+
 ul li{
     padding:2vh;
     text-align:center ;
@@ -46,22 +44,7 @@ ul li{
     height:100vh;width:70vw;
     background:#222;
 }
-/*li.creator .popup{
-    position: absolute;
-    width: 50vw;
-    height: 50vh;
-    border-radius: 6px;
-    top:25%;
-    left: 25%;
-    background: #fff;
-    transform: translate(-50%, -50%) scale(0.1);
-    text-align: center;
-    visibility:hidden;
-    padding: 0 30px 30px ;
-}
-.open-popup{
-    visibility: visible;
-}*/
+
 
 #close{height:100vh;width:30vw;}
 #logo{
@@ -83,6 +66,18 @@ ul li{
     border:none ;outline:none;
 }
 #logo a{color:#000;}
+#product-title{
+    height: 10vh;
+    background: #000;
+    text-align: center;
+    color: #ffffff;
+    
+}
+#product-title li{
+    position: relative;
+    top:30%;
+    list-style-type: none;
+}
 #product{
     width:100vw;
     padding:10px;display:grid;      grid-template-columns:repeat(2,1fr);  
@@ -108,6 +103,43 @@ ul li{
     background:rgba(0,0,0,.6);
 }
 #product h2{padding:5px;}
+#set-title{
+    height: 10vh;
+    background: #000;
+    text-align: center;
+    color: #ffffff;
+    
+}
+#set-title li{
+    position: relative;
+    top:30%;
+    list-style-type: none;
+}
+#sets{
+    width:100vw;
+    padding:10px;display:grid;      grid-template-columns:repeat(1,1fr);  
+    grid-gap:2vh;
+    align-self:center;
+    justify-content:center;
+    background:#111;color:#fff;
+    overflow:hidden ;
+    text-align:center ;    
+}
+#sets .sets{
+    height:20vh;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center ;
+    color:#fff;
+    box-shadow:0 0 2px 4px rgba(0,169,255,.35);
+    transition:0.5s;
+}
+#sets .sets:hover{box-shadow:0 0 2px 2px rgba(0,169,255,.35);}
+#sets .sets #info-p{
+    width:100%;padding:1vh;
+    background:rgba(0,0,0,.6);
+}
+
 #buy{
     position: relative;
     height:40px;width:130px;
@@ -276,12 +308,25 @@ transform: scale(1,1) translate(0px, 0px);
 
 
 /*Night Mode*/
+body.swch #product-title{
+    background: #fff;
+    color:#000;
+}
+body.swch #set-title{
+    background: #fff;
+    color:#000;
+}
 body.swch #switch{justify-content:flex-end;}
 body.swch #slider{filter:invert(1);}
 body.swch #product{background:#fff;}
 body.swch #product .product{
     box-shadow:0 0 4px 4px rgba(255, 255, 255, 0.35);
     transition-duration:0.5s;}body.swch #product .product:hover{
+    box-shadow:0 0 1px 1px rgba(0,0,0,.35);}
+body.swch #sets{background:#fff;}
+body.swch #sets .sets{
+    box-shadow:0 0 4px 4px rgba(255, 255, 255, 0.35);
+    transition-duration:0.5s;}body.swch #sets .sets:hover{
     box-shadow:0 0 1px 1px rgba(0,0,0,.35);}
 body.swch #about{
     background:#fff;color:#000;}
