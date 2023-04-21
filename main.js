@@ -4,10 +4,12 @@ function back_home(){
     document.getElementById("info").style.display="none";
 }  
 function on(){
-    document.getElementById("slider").style.display="flex";
+    document.getElementById("slider").classList.toggle("slide-in");
+    document.getElementById("slider").classList.toggle("slide-out");
 }
 function off(){
-    document.getElementById("slider").style.display="none";
+    document.getElementById("slider").classList.toggle("slide-in");
+    document.getElementById("slider").classList.toggle("slide-out");
 }
 function swch(){var swch= document.querySelector("body");
     swch.classList.toggle("swch");

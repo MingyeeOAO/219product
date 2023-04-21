@@ -17,7 +17,7 @@
             <h1 class="header">CHSH 119 <b>.</b></h1>    
             <h1 onclick="on()" class="fas fa-bars"></h1></div>
         <!--Slider-->
-        <div id="slider">
+        <div id="slider" class="slide-out">
         <div id="close" onclick="off()"></div>
         <div id="nav-bar"><ul>
         <li><h3>Online Shop<b>.</b></h3></li>
@@ -65,36 +65,35 @@
             var products = [
             {
                 name: "奶酪",
-                price: "1",
+                price: "35, 兩個特價60!",
                 about:"打開杯蓋，撲鼻而來的只有鮮奶的濃純香!我們用料實在，全程不加一滴水，還細選三種美味的加料，錯過可惜！",
                 src: "ptcta" 
             },{
                 name: "布蕾",
-                price: "2",
+                price: "50",
                 about:"~這扎實的用料，細緻的口感，還有表層炙燒得令人垂涎欲滴的焦糖，你，還在等什麼?別再蕾了啦哥!",
                 src: "bu"
             },{    
                 name: "冰棒",
-                price: "10",
+                price: "30",
                 about:"炎炎夏日就該來支老少咸宜的冰棒!我們精挑四種經典滋味準備給您品嚐，吃下去保證暑氣全消，透心涼~",
                 src: "popsicle" 
             },{
                 name: "三明治",
-                price: "10",
+                price: "45, 加蛋僅5元!",
                 about:"此三明治非彼三明治也，利用優質烤肉、美生菜、吐司的完美結合，還有神秘配料共舞，絕對是您解饞止飢的好選擇!",
                 src: "sandwich" 
-            }/*,{
-                name: "Sandwich And Slice Of Lemons",
-                price: "7",
-                about:"write write write write write write write write write write write write write write write write",
-                src: "利用夏天冰涼的汽水結合氣勢炸裂的乾冰，營造出吞雲吐霧的神秘感，不僅消暑解渴，其風味更值得您來試試!
-"
             },{
-                name: "Pizza",
+                name: "乾冰飲料",
+                price: "40",
+                about:"利用夏天冰涼的汽水結合氣勢炸裂的乾冰，營造出吞雲吐霧的神秘感，不僅消暑解渴，其風味更值得您來試試!",
+                src: "dryice"
+            },{
+                name: "測試",
                 price: "15",
-                about:"write write write write write write write write write write write write write write write write",
+                about:"備用",
                 src: "M060FSa"  
-            },{
+            },/*{
                 name: "Egg with Vegetables",
                 price: "10",
                 about:"write write write write write write write write write write write write write write write write",
@@ -108,21 +107,21 @@
             ]
             var sets =[{
                 name:"A套餐",
-                price:"1234",
+                price:"1234 90",
                 about:"aasdada",
-                src:"PJA"
+                src:"SMA"
             },
             {
-                name:"A套餐",
-                price:"1234",
+                name:"B套餐",
+                price:"1234 90",
                 about:"aasdada",
-                src:"PJA"
+                src:"SMB"
             },
             {
-                name:"A套餐",
-                price:"1234",
+                name:"C套餐",
+                price:"120 up 140up",
                 about:"aasdada",
-                src:"PJA"
+                src:"SMC"
             }
             ]
             for(var p=0;p<products.length;p++){
@@ -158,12 +157,12 @@
                     </button>
                 </div>`
             } 
-            function info(p){
+            function info(num){
                 var info =
                 document.getElementById("info");
                 setTimeout(() => {
-                info.style.display="block";  
-                },1000);
+                info.style.display="static";  
+                },200);
                 /*var pic =  "https://mingyeeoao.github.io/119product/pictures/"+products[p].src+".jpg)"
                 Swal.fire({
                     imageUrl: pic,
@@ -178,15 +177,15 @@
                 <div class="info"><ul>
                 <li><h2>產品介紹:</h2></li>
                 <li>${products[num].about}</li>
-                <li>$${products[num].price}</li>
+                <li>價格: $${products[num].price}</li>
                 </ul></div>`
             }
-            function sinfo(p){
+            function sinfo(num){
                 var info =
                 document.getElementById("info");
                 setTimeout(() => {
                 info.style.display="block";  
-                },1000);
+                },200);
                 /*var pic =  "https://mingyeeoao.github.io/119product/pictures/"+products[p].src+".jpg)"
                 Swal.fire({
                     imageUrl: pic,
@@ -201,7 +200,7 @@
                 <div class="info"><ul>
                 <li><h2>產品介紹:</h2></li>
                 <li>${sets[num].about}</li>
-                <li>$${sets[num].price}</li>
+                <li>價格: $${sets[num].price}</li>
                 </ul></div>`
             } 
             Swal.fire({
@@ -257,6 +256,8 @@
                     Swal.fire({
                         title:"你的單號:"+a,
                         width:'40em',
+                        showCancelButton: true,
+                        
                         //background:getThemeColor(),
                         showClass: {
                             popup: 'animate__animated animate__bounceInUp'
@@ -265,9 +266,15 @@
                             popup: 'animate__animated animate__bounceOutDown'
                           },
                         html: 'step1-> 請記住上方的單號(可截圖)<br>'+
-                              'step2-> <a style="color:blue" href="https://forms.gle/PZtE4ufPmKRWbpVb7">點我</a>前往點餐表單並填入單號<br>'+
+                              'step2-> 點擊下方按鈕前往點餐表單並填入單號<br>'+
                               "step3->完成表單填寫並按下提交<br>"+
-                              "step4->前往點餐區進行下個流程(見攤位上的流程表)<br>"
+                              "step4->前往點餐區進行下個流程(見攤位上的流程表)<br>",
+                        confirmButtonText: '前往連結',
+                        showLoaderOnConfirm: true
+                    }).then((result) =>{
+                        if (result.isConfirmed) {
+                            location.href = "https://forms.gle/PZtE4ufPmKRWbpVb7";
+                        }
                     })
                 }
                 xhr.send(null);
