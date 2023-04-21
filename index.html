@@ -65,22 +65,22 @@
             var products = [
             {
                 name: "奶酪",
-                price: "1",
+                price: "35, 兩個特價60!",
                 about:"打開杯蓋，撲鼻而來的只有鮮奶的濃純香!我們用料實在，全程不加一滴水，還細選三種美味的加料，錯過可惜！",
                 src: "ptcta" 
             },{
                 name: "布蕾",
-                price: "2",
+                price: "50",
                 about:"~這扎實的用料，細緻的口感，還有表層炙燒得令人垂涎欲滴的焦糖，你，還在等什麼?別再蕾了啦哥!",
                 src: "bu"
             },{    
                 name: "冰棒",
-                price: "10",
+                price: "30",
                 about:"炎炎夏日就該來支老少咸宜的冰棒!我們精挑四種經典滋味準備給您品嚐，吃下去保證暑氣全消，透心涼~",
                 src: "popsicle" 
             },{
                 name: "三明治",
-                price: "10",
+                price: "45, 加蛋僅5元!",
                 about:"此三明治非彼三明治也，利用優質烤肉、美生菜、吐司的完美結合，還有神秘配料共舞，絕對是您解饞止飢的好選擇!",
                 src: "sandwich" 
             }/*,{
@@ -178,7 +178,7 @@
                 <div class="info"><ul>
                 <li><h2>產品介紹:</h2></li>
                 <li>${products[num].about}</li>
-                <li>$${products[num].price}</li>
+                <li>價格: $${products[num].price}</li>
                 </ul></div>`
             }
             function sinfo(num){
@@ -201,7 +201,7 @@
                 <div class="info"><ul>
                 <li><h2>產品介紹:</h2></li>
                 <li>${sets[num].about}</li>
-                <li>$${sets[num].price}</li>
+                <li>價格: $${sets[num].price}</li>
                 </ul></div>`
             } 
             Swal.fire({
