@@ -342,3 +342,6 @@ body.swch #logo button{background:#ffffff;}
 body.swch #logo li{color: #969696;;}
 body.swch #about img{filter:invert(0)}
 body.swch #header-bar{color:#000;}
+body.swch #img-box{
+    background:#fff;
+}
