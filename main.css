@@ -180,7 +180,7 @@ ul li{
     display:flex;
     align-items:center ;
     justify-content:center ;
-    background:#fff;color:#000;
+    background:#000;color:#000;
 }
 /*.img-box.appear{
     opacity: 1;
@@ -334,7 +334,12 @@ body.swch #buylink{
     background: #fff;
 }
 body.swch #info{
-    background:#fff;color:#000;}
+    background:#fff;color:#000;
+}
+body.swch #info .img-box{
+    background:#fff
+}
+
 body.swch #logo{
 background:url("pictures/background.jpg") center center fixed no-repeat; 
 background-size:cover;}
@@ -342,6 +347,4 @@ body.swch #logo button{background:#ffffff;}
 body.swch #logo li{color: #969696;;}
 body.swch #about img{filter:invert(0)}
 body.swch #header-bar{color:#000;}
-body.swch #img-box{
-    background:#fff;
-}
+
