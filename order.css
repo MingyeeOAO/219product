@@ -1,0 +1,146 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+#overlay {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent gray */
+  z-index: 9999; /* Ensure it's above other elements */
+  pointer-events: none; /* Make it non-clickable */
+  overflow: hidden;
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 50%;
+  left: 50%;
+  margin: -60px 0 0 -60px;
+  animation: spin 2s linear infinite;
+}
+
+.sing{
+  font-size: small;
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  border: 2px solid rgba(27, 31, 35, 0.15);
+  box-sizing: border-box;
+}
+
+.bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  background-size: cover;
+}
+
+.title{
+  position: relative;
+  top: 10px;
+  left: 10px;
+  font-weight: 700;
+  font-size: xx-large;
+}
+.input{
+  width: 145px;
+  top: 30%;
+  position: absolute;
+  height: 40px;
+  right: 0;
+  margin-left: auto;
+}
+
+.holder {
+  appearance: none;
+  background-color: #ffffff;
+  border: 2px solid rgba(27, 31, 35, 0.15);
+  border-radius: 8px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  width: 50px;
+  height: 30px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+}
+
+.ch {
+  appearance: none;
+  background-color: #ffffff;
+  border: 2px solid rgba(27, 31, 35, 0.15);
+  border-radius: 8px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+
+}
+
+.ch:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/*
+.logo {
+  display: block;
+  top:50%;
+  left: 58%;
+  
+  fill: none;
+  stroke-dasharray: 20000px;
+  stroke: rgb(0, 0, 0);
+  animation: load 5s infinite linear;
+}*/
+
+@keyframes load {
+  0% {
+      stroke-dashoffset: 0px;
+  }
+
+  100% {
+      stroke-dashoffset: 100000px;
+      /* <-- This number should always be 10 times the number up there*/
+  }
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow: auto; /* Prevent scrolling */
+  font-family: 'cwTeXYen', sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+
