@@ -142,6 +142,7 @@ input[type=number]::-webkit-outer-spin-button
 }
 .section{
   height: 40vh;
+  width: 100%;
   position: relative;
 }
 .selection{
@@ -158,7 +159,7 @@ input[type=number]::-webkit-outer-spin-button
 
 .submit{
   position: relative;
- 
+  width: 100vw;
 }
 
 
@@ -202,6 +203,7 @@ input[type=number]::-webkit-outer-spin-button
 }
 body, html {
   height: 100%;
+  width: 100%;
   margin: 0;
   overflow: auto; /* Prevent scrolling */
   font-family: 'cwTeXYen', 'Chillax-Medium';
