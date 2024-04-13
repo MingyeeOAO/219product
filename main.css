@@ -379,7 +379,10 @@ ul li {
 
 
 /*Night Mode*/
-
+body.swch #buy{
+    background: #fff;
+    color: #000;
+}
 body.swch #product-title {
     background: #fff;
     color: #000;

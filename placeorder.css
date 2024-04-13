@@ -1,0 +1,283 @@
+
+ .boxx{
+    width:400px;
+    display:none;
+    overflow:hidden;
+ }
+ .road{
+    display:none;
+   background-image: linear-gradient(90deg, #0e2a54 25%, #ffffff 25%, #ffffff 50%, #0e2a54 50%, #0e2a54 75%, #ffffff 75%, #ffffff 100%);
+    width:100%;
+    height:10px;
+    position:absolute;
+    top:50%;
+    animation-delay:2s;
+    animation-name:road;
+    animation-duration:0.4s;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+ }
+ .button{
+    width:auto;
+    height:auto;
+    transform:translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    position:absolute;
+    overflow:hidden;
+ }
+ .button .b1{
+    cursor:pointer;
+    width:450px;
+    height:120px;
+    background-color:#0e2a54;
+    border-radius:100px;
+    color:white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 120px;
+    font-size:30px;
+    transition: all 0.3s ease 0s;
+ }
+ .package{
+    border-radius:5px;
+    top:33%;
+    left:10%;
+    width:40px;
+    height:40px;
+    background-image:linear-gradient(#FFAB00 50%, #827717);
+    position:absolute;
+    z-index:2;   
+    animation-delay:0.5s;
+    animation-name:movepackage;
+    animation-duration:0.7s ;
+    animation-timing-function: linear, ease-in;
+ }
+ .lorry{
+    width:120px;
+    height:70px;
+    background-image: linear-gradient(#ECEFF1, #EEEEEE);
+    position:absolute;
+    transform:translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    border-radius:4px;
+    animation:0.3s movelorry;
+    animation-timing-function:ease-in-out;
+ }
+ .lorry .head{
+    width:50px;
+    height:inherit;
+    background-color:red;
+    border-top-right-radius:18px;
+    border-bottom-right-radius:18px;
+    border-top-left-radius:4px;
+    border-bottom-left-radius:4px;
+    margin-left:122px;
+ }
+ .head::before{
+    content:'';
+    width:18%;
+    border-top-right-radius:15px;
+    border-bottom-right-radius:15px;
+    border-top-left-radius:3px;
+    border-bottom-left-radius:3px;
+    height:70%;
+    top:10px;
+    margin-left:0px;
+    background-image:linear-gradient(to right, black, gray);
+    position:absolute;
+    border-left:20px solid #B71C1C;
+ }
+ .lorry .head .clight{
+    width:3px;
+    height:10px;
+    background-color:yellow;
+    top:12px;
+    margin-left:50px;
+    position:absolute;
+    box-shadow:0px 30px 0px 0 yellow;
+ }
+ .lorry .door .ld{
+    background-image:linear-gradient(#ECEFF1, #EEEEEE);;
+    width:25px;
+    height:5px;
+    position:absolute;
+    margin-left:-20px;
+    border-radius:1px;
+    margin-top:10px;
+    transform-origin:top right;
+    transform:rotate(-90deg);
+    animation-delay:1s;
+    animation-name:doorleft;
+    animation-duration: 1.2s ;
+    animation-timing-function: linear, ease-in;
+ }
+ 
+ .lorry .door .rd{
+    background-image:linear-gradient(#ECEFF1, #EEEEEE);;
+    width:25px;
+    height:5px;
+    position:absolute;
+    margin-left:-20px;
+    border-radius:1px;
+    margin-top:55px;
+    transform-origin:top right;
+    transform:rotate(90deg);
+    animation-delay:1s;
+    animation-name:doorright;
+    animation-duration: 1.2s ;
+    animation-timing-function: linear, ease-in;
+ }
+ @keyframes doorleft{
+    0%{
+       transform:rotate(-90deg);
+    }
+    10%{
+       transform:rotate(30deg);
+    }
+    100%{
+       transform:rotate(-90deg);
+       display:none;
+    }
+ }
+ 
+ @keyframes doorright{
+    0%{
+       transform:rotate(90deg);
+    }
+    10%{
+       transform:rotate(-30deg);
+    }
+    100%{
+       transform:rotate(100deg);
+       
+    }
+ }
+ @keyframes movepackage{
+    0%{
+       transform:translate(10%, 0);
+       opacity:1;
+    }
+    90%{
+       
+       opacity:0.8;
+    }
+    100%{
+       transform:translate(130%, 0);
+       opacity:0;
+    }
+ }
+ 
+ @keyframes movelorry{
+    from{
+       left:100%;
+    }
+    to{
+       left:50%;
+    }
+ } 
+ 
+ @keyframes road{
+    100% { 
+     -webkit-transform: translateX(-50%);  
+   }
+ }
+ 
+ @keyframes lorryonroad{
+    0%{
+       margin-left:-10%;
+    }
+    40%{
+       margin-left:-20%;
+    }
+    70%{
+       margin-left:10%;
+    }
+    90%{
+       margin-left:-20%;
+    }
+    100%{
+       margin-left:10%;
+    }
+ }
+ .lorryonroad{
+    animation-duration:3s;
+    animation-delay:2s;
+    animation-timing-function:ease-in-out;
+    animation-name:lorryonroad;
+    
+ }
+ .c1, .c2{
+    width:50px;
+    filter:sepia(100%);
+    margin-top:-10px;
+    margin-left:-2px;
+ }
+ svg {
+   width: 80px;
+   display: block;
+   margin: 40px auto 0;
+ }
+ .path {
+   stroke-dasharray: 1000;
+   stroke-dashoffset: 0;
+ }
+ .path.circle {
+   -webkit-animation: dash 0.9s ease-in-out;
+   animation: dash 0.9s ease-in-out;
+ }
+ .path.line {
+   stroke-dashoffset: 1000;
+   -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+   animation: dash 0.9s 0.35s ease-in-out forwards;
+ }
+ .path.check {
+   stroke-dashoffset: -100;
+   -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+   animation: dash-check 0.9s 0.35s ease-in-out forwards;
+ }
+ @-webkit-keyframes dash {
+   0% {
+     stroke-dashoffset: 1000;
+   }
+   100% {
+     stroke-dashoffset: 0;
+   }
+ }
+ @keyframes dash {
+   0% {
+     stroke-dashoffset: 1000;
+   }
+   100% {
+     stroke-dashoffset: 0;
+   }
+ }
+ @-webkit-keyframes dash-check {
+   0% {
+     stroke-dashoffset: -100;
+   }
+   100% {
+     stroke-dashoffset: 900;
+   }
+ }
+ @keyframes dash-check {
+   0% {
+     stroke-dashoffset: -100;
+   }
+   100% {
+     stroke-dashoffset: 900;
+   }
+ }
+ .b1 svg{
+    position:absolute;
+    top:15%;
+    left:50%;
+    transform:translate(-50%, -50%);
+ }
+ .dribbble{
+    position:absolute;
+    bottom:10px;
+    width:100px;
+    right:5px;
+ }
