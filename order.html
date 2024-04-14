@@ -99,7 +99,7 @@
             const maxTime = new Date("2000-01-01 12:30");
 
             if (selectedTime < minTime || selectedTime > maxTime) {
-                return error("Please select a time between 9:30 AM and 12:00 AM.");
+                return error("請選擇介於 9:30 AM 與 12:30 AM 之間的時間");
             }
             if (checkAllZero()) return error("請勿送出空訂單!")
             
