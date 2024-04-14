@@ -76,7 +76,7 @@ input[type=number]::-webkit-outer-spin-button
   opacity: 80%;
 }
 .input{
-  width: 145px;
+  width: 130px;
   top: 30%;
   position: absolute;
   height: 40px;
@@ -185,10 +185,11 @@ input[type=number]::-webkit-outer-spin-button
   animation: load 5s infinite linear;
 }*/
 #set-title {
-  height: 10vh;
+  position: relative;
+  height: 8vh;
   background: #212121;
-  text-align: center;
   color: #fff;
+  text-align: center;
   transition-duration: 1s;
 }
 #set-title li {
@@ -218,6 +219,7 @@ body, html {
   background-color: #212121;
   color: #fff;
   transition-duration: 1s;
+  
 }
 .checkout b{
   font-size: x-large;
@@ -265,13 +267,17 @@ body, html {
   position: relative;
 }
 .info{
-  left: 5%;
-  width: 95%;
+  left: 0%;
+  width: 100%;
   position: relative;
 }
 
+.info a{
+  left: 5%;
+  position: relative;
+}
 .header h2{
-  left: 10%;
+  left: 13%;
   top: 2%;
   position: absolute;
 }

@@ -14,6 +14,14 @@
     <link href="order.css" rel="stylesheet">
     <script src="order.js" ></script>
     <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            Swal.fire({
+                icon:'success',
+                title: 'Welcome!',
+                html:'即日起至4/19晚上24：00止，搶先預購享多重優惠！<br>不論單點或套餐<br>1.烤肉三明治可「免費加起司片」‼️<br>2.多多綠茶、冬瓜檸檬可「免費加蘆薈」‼️<br>3.銅鑼燒可「免費換芋頭餡」‼️',
+                footer:'219預購網站'    
+            });
+        })
         function overlay(boo){
             const overlay = document.getElementById('overlay');
             const mainContent = document.body;
@@ -150,16 +158,10 @@
 <div class="header"> 
 <a href="index.html"><h1 class="fas fa-arrow-circle-left"></h1></a><h2>Order</h2>
 </div>
-<div class="info">
-即日起至4/19晚上24：00止，搶先預購享多重優惠！<br>
-不論單點或套餐<br>
-1.烤肉三明治可「免費加起司片」‼️<br>
-2.多多綠茶、冬瓜檸檬可「免費加蘆薈」‼️<br>
-3.銅鑼燒可「免費換芋頭餡」‼️<br>
-</div> 
+
 
 <form id="orderForm">
-    <div id="set-title"><li><h1>~~基本資料~~</h1></li></div>
+    <div id="set-title"><h1>~~基本資料~~</h1></div>
 
     <div class="basic-info">
     <label for="name">姓名：</label><br>
