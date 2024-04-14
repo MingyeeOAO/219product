@@ -375,7 +375,7 @@ ul li {
     position: fixed;
     left: 0%;
     top: 95vh;
-    width: 100%;
+    width: 100vw;
     height: 5vh;
     border-radius: 0%;
     background: #1f1f1f;
@@ -384,7 +384,7 @@ ul li {
     font-size: 1.2em;
     z-index: 999;
     transition-duration: 1s;
-    margin-top: auto;
+   
 }
 #buy:hover{
     background-color: #8f8f8f;
