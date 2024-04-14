@@ -46,12 +46,18 @@ input[type=number]::-webkit-outer-spin-button
   font-size: small;
   position: relative;
   width: 100%;
-  height: 20vh;
+  height: 25vh;
   border: 2px solid rgba(27, 31, 35, 0.15);
   box-sizing: border-box;
-  
 }
-
+.header{
+  top:0%;
+  left: 0%;
+  width: 100%;
+  height: 12vh;
+  margin-bottom: auto;
+  position: relative;
+}
 .bg{
   width: 100%;
   height: 100%;
@@ -238,4 +244,45 @@ body, html {
   background-color: #aeaeae;
   transition: 0.2s;
 
+}
+
+.text-input{
+  border-radius: 5px;
+  height: 20px;
+  width: 150px;
+  left: 6%;
+  margin-left: auto;
+  position: relative;
+  border: 2px solid  rgba(27, 31, 35, 0.15);
+}
+.notice{
+  left: 6%;
+  position: relative;
+}
+.basic-info label{
+  font-size: large;
+  left: 5%;
+  position: relative;
+}
+.info{
+  left: 5%;
+  position: relative;
+}
+
+.header h2{
+  left: 10%;
+  top: 2%;
+  position: absolute;
+}
+.header h1{
+  left: 2%;
+  top: 0%;
+  position: absolute;
+}
+
+.header a{
+  color:#fff;
+}
+.header a:hover{
+  color: #aeaeae;
 }

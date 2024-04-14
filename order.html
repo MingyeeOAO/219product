@@ -147,26 +147,38 @@
 </div>
 
 <body>
-
-<h2>ORDER</h2>
+<div class="header"> 
+<a href="index.html"><h1 class="fas fa-arrow-circle-left"></h1></a><h2>Order</h2>
+</div>
+<div class="info">
+即日起至4/19晚上24：00止，搶先預購享多重優惠！<br>
+不論單點或套餐<br>
+1.烤肉三明治可「免費加起司片」‼️<br>
+2.多多綠茶、冬瓜檸檬可「免費加蘆薈」‼️<br>
+3.銅鑼燒可「免費換芋頭餡」‼️<br>
+</div> 
 
 <form id="orderForm">
+    <div id="set-title"><li><h1>~~基本資料~~</h1></li></div>
+
+    <div class="basic-info">
     <label for="name">姓名：</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <input type="text" id="name" name="name" class="text-input" placeholder="輸入您的名字" required><br><br>
     
     <label for="phone">電話：</label><br>
-    <input type="text" id="phone" name="phone" required><br><br>
+    <input type="text" id="phone" name="phone" class="text-input" placeholder="輸入您的電話" required><br><br>
     
-    <label for="time">時間：</label><br>
-    <input type="time" id="time" name="time" min="09:30" max="12:30" required><br><br>
-
+    <label for="time">取餐時間：</label><br>
+    <input type="time" id="time" name="time" min="09:30" max="12:30" class="text-input" required><br>
+    <small class="notice">請選擇09:30 ~ 12:30的一個取餐時間</small>
+    </div>
     
     <div id="set-title"><li><h1>~~~單點~~~</h1></li></div>
     <div class="sing">
     <div class="bg" style="background-image: url(pictures/sandwich.jpg); opacity:75%"></div>
     <label for="sandwich" class="title">嫩煎里肌蛋吐司</label><br>
     <div class="input">
-    <a style="font-size: medium;">50$</a><br>
+    <a style="font-size: medium;">$50</a><br>
     <input type="button" value="+" class="ch" onclick="inc('sandwich', 1)">
     <input type="number" class = "holder" id="sandwich" name="sandwich" value="0" min="0" max="10" readonly required>
     <input type="button" value="-" class="ch" onclick="inc('sandwich', -1)">
@@ -176,7 +188,7 @@
     <div class="bg" style="background-image: url(pictures/cola.jpg); opacity:75%"></div>
     <label for="cola" class="title">乾冰可樂</label><br>
     <div class="input">
-    <a style="font-size: medium;">40$</a><br>
+    <a style="font-size: medium;">$40</a><br>
     <input type="button" value="+" class="ch" onclick="inc('cola', 1)">
     <input type="number" class = "holder" id="cola" name="cola" value="0" min="0" max="10" readonly required>
     <input type="button" value="-" class="ch" onclick="inc('cola', -1)"><br><br>
@@ -186,7 +198,7 @@
     <div class="bg" style="background-image: url(pictures/sp.jpg); opacity:75%"></div>
     <label for="lemon" class="title">乾冰雪碧</label><br>
     <div class="input">
-    <a style="font-size: medium;">40$</a><br>
+    <a style="font-size: medium;">$40</a><br>
     <input type="button" value="+" class="ch" onclick="inc('sp', 1)">
     <input type="number" class = "holder" id="sp" name="sp" value="0" min="0" max="10" readonly required>
     <input type="button" value="-" class="ch" onclick="inc('sp', -1)"><br><br>
@@ -196,7 +208,7 @@
     <div class="bg" style="background-image: url(pictures/green.jpg); opacity:75%"></div>
     <label for="green" class="title">多多綠茶</label><br>
     <div class="input">
-    <a style="font-size: medium;">40$</a><br>
+    <a style="font-size: medium;">$40</a><br>
     <input type="button" value="+" class="ch" onclick="inc('green', 1)">
     <input type="number" class = "holder" id="green" name="green" value="0" min="0" max="10" readonly required>
     <input type="button" value="-" class="ch" onclick="inc('green', -1)"><br><br>
@@ -206,7 +218,7 @@
     <div class="bg" style="background-image: url(pictures/lemon.jpg); opacity:75%"></div>
     <label for="lemon" class="title">冬瓜檸檬</label><br>
     <div class="input">
-    <a style="font-size: medium;">40$</a><br>
+    <a style="font-size: medium;">$40</a><br>
     <input type="button" value="+" class="ch" onclick="inc('lemon', 1)">
     <input type="number" class = "holder" id="lemon" name="lemon" value="0" min="0" max="10" readonly required>
     <input type="button" value="-" class="ch" onclick="inc('lemon', -1)"><br><br>
@@ -216,7 +228,7 @@
     <div class="bg" style="background-image: url(pictures/bu.jpg); opacity:75%"></div>
     <label for="bul" class="title">烤布蕾</label><br>
     <div class="input">
-    <a style="font-size: medium;">50$</a><br>
+    <a style="font-size: medium;">$50</a><br>
     <input type="button" value="+" class="ch" onclick="inc('bul', 1)">
     <input type="number" class = "holder" id="bul" name="bul" value="0" min="0" max="10" readonly required>
     <input type="button" value="-" class="ch" onclick="inc('bul', -1)"><br><br>
@@ -226,7 +238,7 @@
     <div class="bg" style="background-image: url(pictures/tls.jpg); opacity:75%"></div>
     <label for="tls" class="title">銅鑼燒</label><br>
     <div class="input">
-    <a style="font-size: medium;">一個30$，兩個50$</a><br>
+    <a style="font-size: medium;">一個$30，兩個$50</a><br>
     <input type="button" value="+" class="ch" onclick="inc('tls', 1)">
     <input type="number" class = "holder" id="tls" name="tls" value="0" min="0" max="10" readonly required>
     <input type="button" value="-" class="ch" onclick="inc('tls', -1)"><br><br>
@@ -236,9 +248,9 @@
     <div class="set">
     <div class="bg" style="background-image: url(pictures/set.jpg); opacity:75%"></div>
     <label for="sa" class="title">套餐A</label><br>
-    <b>內含:嫩煎里肌蛋吐司x1 <br> 飲料四擇一</b>
+    <b>內含:<br>1.嫩煎里肌蛋吐司x1 <br> 2.飲料四擇一</b>
     <div class="input-set">
-    <a style="font-size: medium;">總量:  (一份80$)</a><br>
+    <a style="font-size: medium;">總量:  (一份$80)</a><br>
     <input type="button" value="+" class="ch" onclick="inc('sa', 1)">
     <input type="number" class = "holder set" id="sa" name="sa" value="0" min="0" max="5" readonly>
     <input type="button" value="-" class="ch" onclick="inc('sa', -1)"><br><br>
@@ -277,11 +289,11 @@
     </div>
     
     <div class="set">
-    <div class="bg" style="background-image: url(pictures/set.jpg); opacity:75%"></div>
+    <div class="bg" style="background-image: url(pictures/setb.jpg); opacity:75%"></div>
     <label for="sb" class="title">套餐B</label><br>
-    <b>內含:銅鑼燒x2/布蕾x1 <br> 飲料四擇一</b>
+    <b>內含:<br>1.銅鑼燒x2/布蕾x1 <br> 2.飲料四擇一</b>
     <div class="input-set">
-    <a style="font-size: medium;">總量:  (一份80$)</a><br>
+    <a style="font-size: medium;">總量:  (一份$80)</a><br>
     <input type="button" value="+" class="ch" onclick="inc('sb', 1)">
     <input type="number" class = "holder" id="sb" name="sb" value="0" min="0" max="5" readonly required>
     <input type="button" value="-" class="ch" onclick="inc('sb', -1)"><br><br>
@@ -333,11 +345,11 @@
     </div>
     </div>
     <div class="set">
-    <div class="bg" style="background-image: url(pictures/set.jpg); opacity:75%"></div>
+    <div class="bg" style="background-image: url(pictures/setc.jpg); opacity:75%"></div>
     <label for="sc" class="title">套餐C</label><br>
-    <b>內含:嫩煎里肌蛋吐司x1 <br>銅鑼燒x2/布蕾x1<br>飲料四擇一</b>
+    <b>內含:<br>1.嫩煎里肌蛋吐司x1 <br>2.銅鑼燒x2/布蕾x1<br>3.飲料四擇一</b>
     <div class="input-set">
-    <a style="font-size: medium;">總量:  (一份120$)</a><br>
+    <a style="font-size: medium;">總量:  (一份$120)</a><br>
     <input type="button" value="+" class="ch" onclick="inc('sc', 1)">
     <input type="number" class = "holder" id="sc" name="sc" value="0" min="0" max="5" readonly required>
     <input type="button" value="-" class="ch" onclick="inc('sc', -1)"><br><br>
@@ -374,7 +386,7 @@
     </div>
 
     <div class="selection" style="left: 53%;">
-    <h3>套餐C飲料選擇:</h3>
+    <h3>套餐C甜點選擇:</h3>
     <div class="setinput">
     <label for="sctls">銅鑼燒x2</label>
     <input type="button" value="+" class="ch" onclick="inc('sctls', 1)">
