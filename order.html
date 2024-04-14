@@ -136,16 +136,15 @@
             var cola = parseInt(document.getElementById("cola").value);
             var sp = parseInt(document.getElementById("sp").value);
             var green = parseInt(document.getElementById("green").value);
-            var lemon = parseInt(document.getElementById("cola").value);
+            var lemon = parseInt(document.getElementById("lemon").value);
             var bul = parseInt(document.getElementById("bul").value);
-            var tls = parseInt(document.getElementById("bul").value);
+            var tls = parseInt(document.getElementById("tls").value);
             var sa = parseInt(document.getElementById("sa").value);
             var sb = parseInt(document.getElementById("sb").value);
             var sc = parseInt(document.getElementById("sc").value);
 
             var money = document.getElementById("money");
-            money.textContent = '$' +(sandwich*50 + (cola + sp + green + lemon)*40 + 
-            bul*50 + parseInt(tls/2)*50 + (tls%2)*50 + sa*80 + sb*80 + sc*120);
+            money.textContent = '$' +(sandwich*50 + (cola + sp + green + lemon)*40 + bul*50 + parseInt(tls/2)*50 + (tls%2)*30 + sa*80 + sb*80 + sc*120);
             
         }, 500);
     </script>
