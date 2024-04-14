@@ -384,6 +384,7 @@ ul li {
     font-size: 1.2em;
     z-index: 999;
     transition-duration: 1s;
+    margin-top: auto;
 }
 #buy:hover{
     background-color: #8f8f8f;
