@@ -482,3 +482,8 @@ body.swch #about img {
 body.swch #header-bar {
     color: #000;
 }
+
+body.swch #logo a button:hover{
+    background-color: #8f8f8f;
+    transition-duration: 0.25s;
+}
