@@ -373,7 +373,7 @@ ul li {
 
 #buy{
     position: fixed;
-    left: 0%;
+    left: 0vw;
     top: 95vh;
     width: 100vw;
     height: 5vh;
@@ -383,6 +383,7 @@ ul li {
     font-weight: 700;
     font-size: 1.2em;
     z-index: 999;
+    margin-top:-2.5vh;
     transition-duration: 1s;
    
 }
