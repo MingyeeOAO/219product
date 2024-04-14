@@ -371,7 +371,7 @@ ul li {
     }
 }
 
-#buy{
+#buybtn{
     position: fixed;
     left: 0vw;
     top: 95vh;
@@ -382,12 +382,11 @@ ul li {
     color: #fff;
     font-weight: 700;
     font-size: 1.2em;
-    z-index: 999;
-    margin-top:-2.5vh;
+    z-index: 9999;
     transition-duration: 1s;
    
 }
-#buy:hover{
+#buybtn:hover{
     background-color: #8f8f8f;
     transition-duration: 0.25s;
 }
