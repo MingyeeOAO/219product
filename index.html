@@ -73,7 +73,7 @@
                 name: "乾冰汽水",
                 price: "40",
                 about:"利用夏天冰涼的汽水結合氣勢炸裂的乾冰，營造出吞雲吐霧的神秘感，不僅消暑解渴，其風味更值得您來試試！",
-                src: "sp"
+                src: "dryice"
                  
             },{
                 name: '多多綠茶',
@@ -122,9 +122,6 @@
                 background-size:cover;"
                 onclick="info(${p})"    data-aos="zoom-in-up">
                 <div id="info-p"><h2>${products[p].name}</h2>
-                    <button id="buy"onclick=popup()>
-                        點我看介紹
-                    </button>
                 </div>`
             } 
             for(var p=0; p<sets.length; p++){
@@ -136,9 +133,6 @@
                 background-size:cover;"
                 onclick="sinfo(${p})"    data-aos=${arr[p%2]}>
                 <div id="info-p"><h2>${sets[p].name}</h2>
-                    <button id="buy"onclick=popup()>
-                        點我看介紹 
-                    </button>
                 </div>`
             } 
             function info(num){

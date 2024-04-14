@@ -266,6 +266,7 @@ body, html {
 }
 .info{
   left: 5%;
+  width: 95%;
   position: relative;
 }
 
