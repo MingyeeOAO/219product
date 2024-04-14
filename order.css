@@ -238,7 +238,7 @@ body, html {
   color: #000000;
   border: 2px solid rgba(27, 31, 35, 0.15);
   background-color: #ffffff;
-  position: absolute;
+  position: relative;
   margin-left: auto;
   box-sizing: border-box;
 }
