@@ -11,7 +11,7 @@
                 var form = document.getElementById("form");
                 var formData = new FormData(form);
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "http://219pre.wuaze.com/219%20back%20end/admin.php", true);
+                xhr.open("POST", "admin.php", true);
 
                 xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
@@ -29,7 +29,7 @@
                 formData.append('pswd', document.getElementById("pswd").value);
 
                 var xhr = new XMLHttpRequest();
-                xhr.open("POST", "http://219pre.wuaze.com/219%20back%20end/admin.php", true);
+                xhr.open("POST", "admin.php", true);
                 xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var response = xhr.responseText;

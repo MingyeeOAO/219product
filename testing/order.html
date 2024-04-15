@@ -96,7 +96,7 @@
             if (checkAllZero()) return error("請勿送出空訂單!")
             
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://http://219pre.wuaze.com/219%20back%20end/save_order.php", true);
+            xhr.open("POST", "save_order.php", true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var response = xhr.responseText;
