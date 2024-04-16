@@ -22,7 +22,6 @@
                 html:'即日起至4/19晚上24：00止，搶先預購享多重優惠！<br>不論單點或套餐<br>1.烤肉三明治可「免費加起司片」‼️<br>2.多多綠茶、冬瓜檸檬可「免費加蘆薈」‼️<br>3.銅鑼燒可「免費換芋頭餡」‼️',
                 footer:'219預購網站'    
             });
-            error("由於一些原因，伺服器暫時無法接收訂單，請各位明天再來試試~")
         })
         function overlay(boo){
             const overlay = document.getElementById('overlay');
@@ -106,7 +105,7 @@
             if (checkAllZero()) return error("請勿送出空訂單!")
             
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://219pre.wuaze.com/219%20back%20end/save_order.php", true);
+            xhr.open("POST", "https://citrc.tw/prs2/save_order.php", true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var response = xhr.responseText;

@@ -384,7 +384,7 @@ ul li {
     font-size: 1.2em;
     z-index: 9999;
     transition-duration: 0.5s;
-    display: flex;
+    display: block;
     text-align: center;
    
    
