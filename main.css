@@ -383,7 +383,7 @@ ul li {
     font-weight: 700;
     font-size: 1.2em;
     z-index: 9999;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     display: flex;
    
 }
