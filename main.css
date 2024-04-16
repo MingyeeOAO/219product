@@ -384,6 +384,7 @@ ul li {
     font-size: 1.2em;
     z-index: 9999;
     transition-duration: 1s;
+    display: flex;
    
 }
 #buybtn:hover{
