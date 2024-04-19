@@ -204,8 +204,16 @@
                     footer:"恭喜你找到彩蛋?(獎勵你拍拍手，可至攤位兌換)"
                 })
             }
+            function dd(){
+                Swal.fire({
+                    icon:"error",
+                    title:"不在開放預購時段!",
+                    text:"請當日到攤位選購!(彰化高中生態池前)",
+                    footer:"219 園遊會預購網"
+                })
+            }
         </script> 
         
-        <a href="order.html"><button id="buybtn" disabled>立即下訂</button></a>
+        <a><button id="buybtn" onclick="dd()">立即下訂</button></a>
     </body>
 </html>
